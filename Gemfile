@@ -58,7 +58,11 @@ gem 'devise'
 # gem 'handlebars-source', '2.0.0'
 gem 'ember-rails'
 gem 'ember-source', '1.9.1'
-gem 'emblem-rails'
+# gem 'emblem-source'
+# gem 'emblem-rails'
+gem 'barber-emblem', git:'https://github.com/simcha/barber-emblem.git'
+gem 'emblem-rails', '~> 0.2.1'
+gem 'emblem-source', git:'https://github.com/machty/emblem.js.git'
 
 # Pretty printing in console
 gem 'hirb'

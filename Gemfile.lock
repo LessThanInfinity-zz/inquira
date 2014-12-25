@@ -1,3 +1,17 @@
+GIT
+  remote: https://github.com/machty/emblem.js.git
+  revision: 54d4e8759a078eb01f4a85e6bf572eeaf449b406
+  specs:
+    emblem-source (0.3.18)
+
+GIT
+  remote: https://github.com/simcha/barber-emblem.git
+  revision: 8f3ef7e80e2385c66fecd037476ee815fab49c2e
+  specs:
+    barber-emblem (0.1.1)
+      barber (>= 0.4.1)
+      emblem-source
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -36,9 +50,6 @@ GEM
       ember-source
       execjs
       handlebars-source (>= 1.0.0.rc.4)
-    barber-emblem (0.1.1)
-      barber (>= 0.4.1)
-      emblem-source
     bcrypt (3.1.9)
     better_errors (2.0.0)
       coderay (>= 1.0.0)
@@ -76,7 +87,6 @@ GEM
     emblem-rails (0.2.1)
       barber-emblem (~> 0.1.1)
       ember-rails (>= 0.14.0)
-    emblem-source (0.3.18)
     erubis (2.7.0)
     execjs (2.2.2)
     handlebars-source (2.0.0)
@@ -187,12 +197,14 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers
   acts_as_tree
+  barber-emblem!
   better_errors
   binding_of_caller
   devise
   ember-rails
   ember-source (= 1.9.1)
-  emblem-rails
+  emblem-rails (~> 0.2.1)
+  emblem-source!
   hirb
   jbuilder (~> 2.0)
   jquery-rails
