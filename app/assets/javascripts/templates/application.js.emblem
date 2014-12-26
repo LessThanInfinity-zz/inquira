@@ -1,3 +1,10 @@
 // app/assets/javascripts/templates/application.js.emblem
-h1 Hello World
-outlet
+
+header
+	article 
+		.logo 
+			h1
+				a href='#' Inquira
+
+section#main
+	= outlet
