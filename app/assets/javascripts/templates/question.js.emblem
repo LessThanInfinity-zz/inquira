@@ -1,0 +1,7 @@
+article#question
+
+	h1 question
+	h1= model.title
+
+	p
+		' model.description	

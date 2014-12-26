@@ -6,5 +6,7 @@ Inquira.Router.reopen({
 })
 
 Inquira.Router.map(function() {
-  this.resource('questions', {path: '/'});
+  this.resource('questions', {path: '/'}, function(){
+  	this.resource('question', {path: '/questions/:id'});
+  } );
 });

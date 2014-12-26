@@ -1,0 +1,8 @@
+article#questions
+	ul
+		each question in controller
+			link-to 'question' question
+				li= question.title
+
+
+outlet
