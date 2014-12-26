@@ -1,11 +1,20 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+  respond_to :html, :json
 
   def index
+    puts "in queController index. "
     @questions = Question.all
-    respond_with(@questions)
+    puts @questions
+
+    respond_with(@questions) do |format|
+      format.html
+      format.json {render json: @questions}
+    end
+
+    # respond_with(@questions)
+
   end
 
   def show

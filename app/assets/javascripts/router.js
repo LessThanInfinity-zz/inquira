@@ -6,5 +6,5 @@ Inquira.Router.reopen({
 })
 
 Inquira.Router.map(function() {
-  // this.resource('posts');
+  this.resource('questions', {path: '/'});
 });
