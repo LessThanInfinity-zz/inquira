@@ -7,6 +7,5 @@ Inquira.Question = DS.Model.extend({
 	created_at: DS.attr('date'),
 	updated_at: DS.attr('date'),
 	anonymous: DS.attr('boolean'),
-
-
+	answers: DS.hasMany('answer')
 });

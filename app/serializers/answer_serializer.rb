@@ -1,4 +1,6 @@
 class AnswerSerializer < ActiveModel::Serializer
+	embed :ids, include: true
+	
   attributes 	:id,
   						:body,
   						:question_id,

@@ -1,6 +1,5 @@
 article#question
 
-	h1 question
 	h1= model.title
 
 	p
@@ -15,3 +14,7 @@ article#question
 			.unsaved Unsaved Changes
 		if isSaving
 			.saving Saving...
+
+	ul 
+		each answer in answers
+			li= answer.body
