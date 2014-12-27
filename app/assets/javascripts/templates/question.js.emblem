@@ -4,4 +4,14 @@ article#question
 	h1= model.title
 
 	p
-		' model.description	
+		' 
+		=model.description
+
+	p
+		a.delete href='#' click='delete' delete
+		/ submit button.
+		input type='submit' value='Save Changes' click='saveChanges'
+		if isDirty
+			.unsaved Unsaved Changes
+		if isSaving
+			.saving Saving...

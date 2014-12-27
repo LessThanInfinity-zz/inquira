@@ -1,8 +1,12 @@
 article#questions
+	h2
+		| Questions  
+		br
+		h3
+			link-to 'questions.new' | New Question
+
 	ul
 		each question in controller
 			link-to 'question' question
 				li= question.title
-
-
 outlet
