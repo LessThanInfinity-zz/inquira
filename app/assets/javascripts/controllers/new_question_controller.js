@@ -3,9 +3,11 @@ Inquira.QuestionsNewController = Ember.Controller.extend({
 
 		createQuestion: function(){
 			var that = this;
+			console.log(that.get('fields'));
+			// debugger
 			var question = that.store.createRecord('question', this.get('fields'));
 			question.save().then(function(){
-				that.transitionToROute('question', question);
+				that.transitionToRoute('question', question);
 			});
 		}
 

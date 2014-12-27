@@ -15,7 +15,7 @@ Inquira.QuestionController = Ember.ObjectController.extend({
 			console.log('delete record Fired.');
 			var that= this;
 			that.get('model').destroyRecord().then(function(){
-				that.transitionToRoute('leads');
+				that.transitionToRoute('questions');
 			})
 		},
 

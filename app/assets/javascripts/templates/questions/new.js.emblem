@@ -1,17 +1,17 @@
-article#lead
-  h1 New Lead
+article#question
+  h1 New Question
 
   form
     fieldset
       dl
         dt: label Title:
         / dd: view Ember.TextField value=fields.title
-        dd: input value=fields.title
+        dd: = input valueBinding='fields.title'
 
       dl
         dt: label Description:
         / dd: view Ember.TextField value=fields.description
-        dd: input value=fields.description
+        dd: = input valueBinding='fields.description'
 
     fieldset.actions
       input type='submit' value='Ask Question' click="createQuestion"

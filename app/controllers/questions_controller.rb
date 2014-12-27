@@ -26,6 +26,8 @@ class QuestionsController < ApplicationController
   end
 
   def new
+    puts "Q new fired. "
+
     @question = Question.new
     # respond_with(@question)
     respond_with(@question) do |format|
@@ -38,8 +40,12 @@ class QuestionsController < ApplicationController
   end
 
   def create
+    puts "Q create fired. "
+
     @question = Question.new(question_params)
-    @question.save
+    @question.asker_id = 1; # THIS must be updated to reflect current user.
+
+    @question.save  
     respond_with(@question) do |format|
       format.html
       format.json {render json: @question}
@@ -74,6 +80,6 @@ class QuestionsController < ApplicationController
 
     def question_params
       params[:question]
-      params.require(:question).permit(:title, :description, :anonymous)
+      params.require(:question).permit(:title, :description, :anonymous, :created_at, :updated_at, :asker_id)
     end
 end
