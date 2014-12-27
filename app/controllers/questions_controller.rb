@@ -4,7 +4,7 @@ class QuestionsController < ApplicationController
   respond_to :html, :json
 
   def index
-    puts "in queController index. "
+    puts "in questions Controller index. "
     @questions = Question.all
     puts @questions
 
