@@ -1,5 +1,7 @@
 Inquira.QuestionController = Ember.ObjectController.extend({
 
+	isShowingQuestion: false,
+
 	actions: {
 		saveChanges: function(){
 			console.log('save Changes fired.');
