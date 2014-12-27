@@ -1,10 +1,13 @@
 // app/assets/javascripts/templates/application.js.emblem
+nav.navbar.navbar-default
+	.container-fluid
+		.col-md-10.col-md-offset-1.centered
+			.navbar-header.text-center.brand
+				link-to 'questions'
+					.navbar-brand.brand href="#"
+						| Inquira
 
-header
-	article 
-		.logo 
-			h1
-				a href='#' Inquira
-
-section#main
-	= outlet
+.container-fluid
+	.col-md-10.col-md-offset-1
+		section#main
+			= outlet

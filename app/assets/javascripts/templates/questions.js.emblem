@@ -1,13 +1,16 @@
 unless isShowingQuestion
 	article#questions
-		h2
-			| Questions  
-			br
-			h3
-				link-to 'questions.new' | New Question
+		/ h2
+		| Questions  
+		br
+		/ h3
+		link-to 'questions.new' | New Question
 
-		ul
-			each question in controller
-				link-to 'question' question
-					li= question.title
+		each question in controller
+			link-to 'question' question
+				h3
+					question.title
+			p
+				question.description
+			hr
 outlet

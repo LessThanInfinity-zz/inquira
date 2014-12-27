@@ -1,0 +1,12 @@
+.main-nav{
+	font-size: 1.5em;
+	line-height: 1000px;
+}
+
+.brand{
+	font-size: 1.5em;
+	color: white !important; /* Not happy about using this */
+	line-height: 20px;
+	font-family: 'Le Monde Courrier';
+	background-color: #AA2200;
+}
