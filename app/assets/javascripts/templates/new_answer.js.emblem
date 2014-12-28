@@ -1,0 +1,11 @@
+article#answer
+  h1 New Answer
+
+  form
+    fieldset
+      dl
+        / dd: view Ember.TextField value=fields.title
+        dd: = input valueBinding='fields.body'
+
+    fieldset.actions
+      input type='submit' value='Add Answer' click="createAnswer"

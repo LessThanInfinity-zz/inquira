@@ -35,6 +35,7 @@ class AnswersController < ApplicationController
 
   def create
     @answer = Answer.new(answer_params)
+    @answer.user_id = 1 # Need to change this as well. 
     @answer.save
     # respond_with(@answer)
     respond_with(@answer) do |format|
@@ -71,5 +72,6 @@ class AnswersController < ApplicationController
 
     def answer_params
       params[:answer]
+      params.require(:answer).permit(:body, :anonymous, :created_at, :updated_at, :user_id, :question_id)
     end
 end

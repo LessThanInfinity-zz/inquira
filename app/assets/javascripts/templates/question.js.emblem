@@ -9,15 +9,23 @@ article#question
 		p.textBody
 			=model.description
 
-		/ .row
-		.actionBar
+		.row.actionBar
 			.col-md-3.want-answers Want answers | 2.1K
 			.col-md-2 Downvote
-		br
-		br
 		hr
 		p
 			=numAnswers
+
+		/ Answer Form.
+		form
+			fieldset
+				.form-group
+					/ dd: = input valueBinding='answerFields.body'
+					= textarea class='form-control addAnswer' valueBinding="answerFields.body" placeholder="Add your answer"
+
+			fieldset.actions
+				button.btn.btn-primary.pull-right type='submit' value="Add Answer" click="createAnswer" Add Answer
+		hr
 
 		if isEditing
 			p
@@ -30,7 +38,7 @@ article#question
 					.saving Saving...
 
 		each answer in answers
-			.answerBox
+			.displayAnswer
 				h4.userInfo John Smith
 				p.answerInfo
 				 | 4k Upvotes
