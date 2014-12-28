@@ -8,5 +8,20 @@ Inquira.Answer = DS.Model.extend({
 	created_at: DS.attr('date'),
 	updated_at: DS.attr('date'),
 	question: DS.belongsTo('question'),
+	answer_upvotes: DS.hasMany('answer_upvote'),
+	answer_downvotes: DS.hasMany('answer_downvote'),
+
+	num_upvotes:function(){
+		// debugger
+		return this.get('answer_upvotes').get('length');
+	}.property('answer_upvotes'),
+
+	num_downvotes:function(){
+		// debugger
+		return this.get('answer_downvotes').get('length');
+	}.property('answer_downvotes') ,
+
+	// num_upvotes: DS.attr('number'),
+	// num_downvotes: DS.attr('number'),
 
 });

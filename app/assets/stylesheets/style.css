@@ -3,9 +3,16 @@ body{
 	font-size: 15px;
 }
 
+/* General use. */
+/* --------------------*/
 .pop{
 	background-color: #f3bd3d;
 }
+
+.noPaddingLeft{
+	padding-left: 0px;
+}
+/* --------------------*/
 
 .main-nav{
 	font-size: 1.5em;
@@ -49,6 +56,12 @@ body{
 	border-radius: 5px;
 	line-height: 2.0;
 	color: #1A4B7A;
+/*	display: inline-block;
+	padding: 0px 15px;*/
+}
+
+.want-answers:hover{
+	cursor: pointer;
 }
 
 .displayAnswer{

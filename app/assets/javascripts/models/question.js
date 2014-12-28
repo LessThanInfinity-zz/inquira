@@ -7,5 +7,18 @@ Inquira.Question = DS.Model.extend({
 	created_at: DS.attr('date'),
 	updated_at: DS.attr('date'),
 	anonymous: DS.attr('boolean'),
-	answers: DS.hasMany('answer')
+	answers: DS.hasMany('answer'),
+	question_upvotes: DS.hasMany('question_upvote'),
+	question_downvotes: DS.hasMany('question_downvote'),
+
+	num_upvotes:function(){
+		// debugger
+		return this.get('question_upvotes').get('length');
+	}.property('question_upvotes'),
+
+	num_downvotes:function(){
+		// debugger
+		return this.get('question_downvotes').get('length');
+	}.property('question_downvotes') ,
+
 });

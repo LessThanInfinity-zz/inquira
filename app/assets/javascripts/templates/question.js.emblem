@@ -10,8 +10,13 @@ article#question
 			=model.description
 
 		.row.actionBar
-			.col-md-3.want-answers Want answers | 2.1K
-			.col-md-2 Downvote
+			.col-md-3.noPaddingLeft
+				.want-answers.text-center click="createUpvote" 
+					' Want answers |
+					model.num_upvotes
+			.col-md-2.noPaddingLeft
+				.downvote.text-center click="createDownvote"
+					| Downvote
 		hr
 		p
 			=numAnswers

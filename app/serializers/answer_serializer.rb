@@ -8,4 +8,8 @@ class AnswerSerializer < ActiveModel::Serializer
   						:anonymous,
   						:created_at,
   						:updated_at
+
+  has_many :answer_upvotes
+  has_many :answer_downvotes
+
 end

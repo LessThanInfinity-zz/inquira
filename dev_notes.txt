@@ -2,3 +2,4 @@ question.create right now defaults asker id to 1. Must be corrected to current u
 
 same with answer's user id. Change on server side to be current user. 
 
+n+1 problem in loading upvotes/downvotes.

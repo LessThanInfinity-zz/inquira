@@ -22,8 +22,13 @@ class QuestionUpvotesController < ApplicationController
 
   def create
     @question_upvote = QuestionUpvote.new(question_upvote_params)
+    @question_upvote.user_id = 1
     @question_upvote.save
-    respond_with(@question_upvote)
+    # respond_with(@question_upvote)
+    respond_with(@question_upvote) do |format|
+      format.html
+      format.json {render json: @question_upvote}
+    end
   end
 
   def update
