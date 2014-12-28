@@ -15,7 +15,7 @@ Inquira.QuestionController = Ember.ObjectController.extend({
 			console.log(that.get('answerFields'));
 			// debugger
 			var answer = that.get('answers').pushObject(that.store.createRecord('answer',answerFields));
-			debugger
+			// debugger
 
 			// var answer = that.store.createRecord('answer', answerFields);
 			answer.save().then(function(){

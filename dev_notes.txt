@@ -1,1 +1,4 @@
 question.create right now defaults asker id to 1. Must be corrected to current user.
+
+same with answer's user id. Change on server side to be current user. 
+
