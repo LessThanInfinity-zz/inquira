@@ -4,7 +4,7 @@ nav.navbar.navbar-default
 		.col-md-10.col-md-offset-1.centered
 			.navbar-header.text-center.brand
 				link-to 'questions'
-					.navbar-brand.brand href="#"
+					.navbar-text.brand href="#"
 						| Inquira
 
 .container-fluid

@@ -1,6 +1,9 @@
 Inquira.QuestionController = Ember.ObjectController.extend({
 
 	isShowingQuestion: false,
+	numAnswers: function(){
+		return this.get('answers').length;
+	}.property('answers'),
 
 	actions: {
 		saveChanges: function(){

@@ -1,20 +1,42 @@
 article#question
 
-	h1= model.title
+	.col-md-2
+		h4.sidePanelHeading Question Topics
 
-	p
-		' 
-		=model.description
+	.col-md-6
+		h1.questionTitle
+			=model.title
+		p.textBody
+			=model.description
 
-	p
-		a.delete href='#' click='delete' delete
-		/ submit button.
-		input type='submit' value='Save Changes' click='saveChanges'
-		if isDirty
-			.unsaved Unsaved Changes
-		if isSaving
-			.saving Saving...
+		/ .row
+		.actionBar
+			.col-md-3.want-answers Want answers | 2.1K
+			.col-md-2 Downvote
+		br
+		br
+		hr
+		p
+			=numAnswers
 
-	ul 
+		if isEditing
+			p
+				a.delete href='#' click='delete' delete
+				/ submit button.
+				input type='submit' value='Save Changes' click='saveChanges'
+				if isDirty
+					.unsaved Unsaved Changes
+				if isSaving
+					.saving Saving...
+
 		each answer in answers
-			li= answer.body
+			.answerBox
+				h4.userInfo John Smith
+				p.answerInfo
+				 | 4k Upvotes
+				p.textBody
+					answer.body
+				hr
+
+	.col-md-4
+		h4.sidePanelHeading Related Questions
