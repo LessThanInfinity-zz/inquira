@@ -1,3 +1,3 @@
 class QuestionDownvoteSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :user_id, :question_id
 end

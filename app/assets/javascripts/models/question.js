@@ -12,7 +12,7 @@ Inquira.Question = DS.Model.extend({
 	question_downvotes: DS.hasMany('question_downvote'),
 
 	num_upvotes:function(){
-		// debugger
+		debugger
 		return this.get('question_upvotes').get('length');
 	}.property('question_upvotes'),
 
