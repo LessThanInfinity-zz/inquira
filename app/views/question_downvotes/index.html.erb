@@ -1,0 +1,23 @@
+<h1>Listing question_downvotes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @question_downvotes.each do |question_downvote| %>
+      <tr>
+        <td><%= link_to 'Show', question_downvote %></td>
+        <td><%= link_to 'Edit', edit_question_downvote_path(question_downvote) %></td>
+        <td><%= link_to 'Destroy', question_downvote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Question downvote', new_question_downvote_path %>

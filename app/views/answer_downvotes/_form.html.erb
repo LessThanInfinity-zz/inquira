@@ -1,0 +1,17 @@
+<%= form_for(@answer_downvote) do |f| %>
+  <% if @answer_downvote.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@answer_downvote.errors.count, "error") %> prohibited this answer_downvote from being saved:</h2>
+
+      <ul>
+      <% @answer_downvote.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

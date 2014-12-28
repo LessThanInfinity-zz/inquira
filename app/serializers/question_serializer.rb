@@ -9,4 +9,7 @@ class QuestionSerializer < ActiveModel::Serializer
   						:updated_at
 
   has_many :answers
+ 	has_many :question_upvotes
+	has_many :question_downvotes
+
 end

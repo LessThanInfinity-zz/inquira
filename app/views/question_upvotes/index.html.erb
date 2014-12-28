@@ -1,0 +1,23 @@
+<h1>Listing question_upvotes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @question_upvotes.each do |question_upvote| %>
+      <tr>
+        <td><%= link_to 'Show', question_upvote %></td>
+        <td><%= link_to 'Edit', edit_question_upvote_path(question_upvote) %></td>
+        <td><%= link_to 'Destroy', question_upvote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Question upvote', new_question_upvote_path %>

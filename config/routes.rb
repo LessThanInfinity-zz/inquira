@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  resources :answer_upvotes
+
+  resources :answer_downvotes
+
+  resources :question_downvotes
+
+  resources :question_upvotes
+
   resources :answers
 
   resources :questions
