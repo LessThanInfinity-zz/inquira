@@ -27,6 +27,12 @@ body{
 	background-color: #AA2200;
 }
 
+.addQuestion{
+	font-size: 1.5em;
+	line-height: 20px;
+	font-family: 'Le Monde Courrier';
+}
+
 .questionTitle{
 	padding-top: 0px;
 	padding-left: 0px;

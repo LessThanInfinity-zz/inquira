@@ -1,17 +1,19 @@
 // app/assets/javascripts/templates/application.js.emblem
 nav.navbar.navbar-default
 	.container-fluid
-		.col-md-10.col-md-offset-1.centered
+		.col-md-4.col-md-offset-1.centered
 			.navbar-header.text-center.brand
 				link-to 'questions'
 					.navbar-text.brand href="#"
 						| Inquira
 
+		.col-md-3.pull-right.centered.text-center
+			.navbar-header.text-center.addQuestion
+				.navbar-text
+					link-to 'questions.new' | New Question
+
 .container-fluid
 	.col-md-10.col-md-offset-1
-		section.well
-			p
-				| Developer Notes: This site has been rolled back to a commit before users was introduced as the new code resulted in some breakage. It should be back to the master branch soon but for now, please enjoy creating question and answering them as the ever-famous John Smith.
 
 		section#main
 			= outlet

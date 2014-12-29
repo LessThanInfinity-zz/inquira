@@ -11,7 +11,8 @@ article#question
       dl
         dt: label Description:
         / dd: view Ember.TextField value=fields.description
-        dd: = input valueBinding='fields.description'
+        / dd: = input valueBinding='fields.description'
+        dd: = textarea class='form-control addAnswer' valueBinding="fields.description" placeholder="Add description (optional)"
 
     fieldset.actions
       input type='submit' value='Ask Question' click="createQuestion"

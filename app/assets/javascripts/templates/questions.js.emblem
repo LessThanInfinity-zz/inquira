@@ -1,16 +1,20 @@
-unless isShowingQuestion
-	article#questions
-		/ h2
-		| Questions  
-		br
-		/ h3
-		link-to 'questions.new' | New Question
-
-		each question in controller
-			link-to 'question' question
-				h3
-					question.title
+unless isAskingQuestion
+	unless isShowingQuestion
+		article.well
 			p
-				question.description
-			hr
+				| Developer Notes: This site has been rolled back to a commit before users was introduced as the new code resulted in some breakage. It should be back to the master branch soon but for now, please enjoy creating question and answering them as the ever-famous John Smith.
+
+			p
+				| This site was built mostly for Emblem.js practice, anyway, so users is an additional touch.
+
+		article#questions
+			br
+
+			each question in controller
+				link-to 'question' question
+					h3
+						question.title
+				p
+					question.description
+				hr
 outlet

@@ -1,5 +1,6 @@
 Inquira.QuestionController = Ember.ObjectController.extend({
-	isShowingQuestion: false,
+	// isShowingQuestion: false,
+	// isAskingQuestion: false,
 	answerFields: {},
 	upvoted: null,
 	downvoted: null,
