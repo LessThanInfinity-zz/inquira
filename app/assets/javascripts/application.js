@@ -16,6 +16,8 @@
 //= require handlebars
 //= require ember
 //= require ember-data
+//= require bootstrap
+//= require underscore
 //= require_self
 //= require ./app
 

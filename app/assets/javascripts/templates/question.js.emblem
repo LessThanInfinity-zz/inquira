@@ -12,11 +12,10 @@ article#question
 		.row.actionBar
 			.col-md-3.noPaddingLeft
 				.want-answers.text-center click="createUpvote" 
-					' Want answers |
-					model.num_upvotes
+					| Want answers | {{num_upvotes}}
 			.col-md-2.noPaddingLeft
 				.downvote.text-center click="createDownvote"
-					| Downvote
+					| Downvote ({{num_downvotes}})
 		hr
 		p
 			=numAnswers

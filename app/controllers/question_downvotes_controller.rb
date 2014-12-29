@@ -22,6 +22,8 @@ class QuestionDownvotesController < ApplicationController
 
   def create
     @question_downvote = QuestionDownvote.new(question_downvote_params)
+    #Needs to be current user
+    @question_downvote.user_id = 1;
     @question_downvote.save
     # respond_with(@question_downvote)
     respond_with(@question_downvote) do |format|

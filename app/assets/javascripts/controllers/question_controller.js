@@ -1,10 +1,40 @@
 Inquira.QuestionController = Ember.ObjectController.extend({
-
 	isShowingQuestion: false,
 	answerFields: {},
+	upvoted: null,
+	downvoted: null,
+
+	upvoteObserver: function(){
+		var that = this;
+		var upvotes = that.get('question_upvotes');
+
+		// Need to replace with current_userID
+		var current_userID = 1;
+
+		if (upvotes.findBy('user_id', current_userID)){
+			that.set('upvoted', true);
+		}
+	}.observes('question_upvotes'),
+
 	numAnswers: function(){
 		return this.get('answers').length;
 	}.property('answers'),
+
+	downvoteObserver: function(){
+		var that = this;
+		var downvotes = that.get('question_downvotes');
+
+		// Need to replace with current_userID
+		var current_userID = 1;
+
+		if (downvotes.findBy('user_id', current_userID)){
+			that.set('downvoted', true);
+		}
+	}.observes('question_downvotes'),
+
+	numAnswers: function(){
+		return this.get('answers').length;
+	}.property('answers'),	
 
 	actions: {
 		createAnswer: function(){
@@ -12,24 +42,20 @@ Inquira.QuestionController = Ember.ObjectController.extend({
 			var answerFields = that.get('answerFields');
 			// answerFields.question_id = that.get('id');
 			answerFields.question_id = 1;
-			console.log(that.get('answerFields'));
-			// debugger
 			var answer = that.get('answers').pushObject(that.store.createRecord('answer',answerFields));
-			// debugger
-
-			// var answer = that.store.createRecord('answer', answerFields);
 			answer.save().then(function(){
 				that.set('answerFields',{});
-				// that.transitionToRoute('question',that.get('id'));
 			})
 		},
 
 		createUpvote: function(){
-			console.log("create upvote fired. ");
 			var that= this;
+
+			if (that.upvoted){
+				return;
+			}
+
 			question_id = that.get('id');
-
-
 			var upvote = that.get('question_upvotes').pushObject(that.store.createRecord('questionUpvote',{
 					question_id: question_id
 			}));
@@ -42,8 +68,23 @@ Inquira.QuestionController = Ember.ObjectController.extend({
 
 		createDownvote: function(){
 			console.log("create downvote fired. ");
-		},
+			var that= this;
 
+			if (that.downvoted){
+				return;
+			}
+
+			console.log("create downvote fired. ");
+			question_id = that.get('id');
+			var downvote = that.get('question_downvotes').pushObject(that.store.createRecord('questionDownvote',{
+					question_id: question_id
+			}));
+
+			// debugger
+			downvote.save().then(function(){
+				console.log('downvoted??');
+			})
+		},
 
 		saveChanges: function(){
 			console.log('save Changes fired.');

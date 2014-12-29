@@ -22,6 +22,7 @@ class AnswerUpvotesController < ApplicationController
 
   def create
     @answer_upvote = AnswerUpvote.new(answer_upvote_params)
+    @answer_upvote.user_id = 1;
     @answer_upvote.save
     # respond_with(@answer_upvote)
     respond_with(@answer_upvote) do |format|

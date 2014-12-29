@@ -22,6 +22,7 @@ class QuestionUpvotesController < ApplicationController
 
   def create
     @question_upvote = QuestionUpvote.new(question_upvote_params)
+    # Needs to be current user
     @question_upvote.user_id = 1
     @question_upvote.save
     # respond_with(@question_upvote)

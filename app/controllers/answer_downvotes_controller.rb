@@ -22,6 +22,7 @@ class AnswerDownvotesController < ApplicationController
 
   def create
     @answer_downvote = AnswerDownvote.new(answer_downvote_params)
+    @answer_downvote.user_id = 1;
     @answer_downvote.save
     # respond_with(@answer_downvote)
     respond_with(@answer_downvote) do |format|
