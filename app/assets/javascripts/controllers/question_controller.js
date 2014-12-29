@@ -27,8 +27,12 @@ Inquira.QuestionController = Ember.ObjectController.extend({
 		createUpvote: function(){
 			console.log("create upvote fired. ");
 			var that= this;
+			question_id = that.get('id');
 
-			var upvote = that.get('question_upvotes').pushObject(that.store.createRecord('questionUpvote',{}));
+
+			var upvote = that.get('question_upvotes').pushObject(that.store.createRecord('questionUpvote',{
+					question_id: question_id
+			}));
 
 			// debugger
 			upvote.save().then(function(){

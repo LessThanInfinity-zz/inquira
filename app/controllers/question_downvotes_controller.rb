@@ -23,7 +23,11 @@ class QuestionDownvotesController < ApplicationController
   def create
     @question_downvote = QuestionDownvote.new(question_downvote_params)
     @question_downvote.save
-    respond_with(@question_downvote)
+    # respond_with(@question_downvote)
+    respond_with(@question_downvote) do |format|
+      format.html
+      format.json {render json: @question_downvote}
+    end
   end
 
   def update
@@ -43,5 +47,6 @@ class QuestionDownvotesController < ApplicationController
 
     def question_downvote_params
       params[:question_downvote]
+      params.require(:question_downvote).permit(:question_id,:user_id)
     end
 end

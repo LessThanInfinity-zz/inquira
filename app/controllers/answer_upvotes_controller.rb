@@ -23,7 +23,12 @@ class AnswerUpvotesController < ApplicationController
   def create
     @answer_upvote = AnswerUpvote.new(answer_upvote_params)
     @answer_upvote.save
-    respond_with(@answer_upvote)
+    # respond_with(@answer_upvote)
+    respond_with(@answer_upvote) do |format|
+      format.html
+      format.json {render json: @answer_upvote}
+    end
+
   end
 
   def update
@@ -43,5 +48,7 @@ class AnswerUpvotesController < ApplicationController
 
     def answer_upvote_params
       params[:answer_upvote]
+      params.require(:answer_upvote).permit(:answer_id,:user_id)
+
     end
 end

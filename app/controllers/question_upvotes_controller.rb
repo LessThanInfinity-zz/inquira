@@ -48,5 +48,6 @@ class QuestionUpvotesController < ApplicationController
 
     def question_upvote_params
       params[:question_upvote]
+      params.require(:question_upvote).permit(:question_id,:user_id)
     end
 end
