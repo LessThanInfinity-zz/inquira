@@ -28,9 +28,10 @@ body{
 }
 
 .addQuestion{
-	font-size: 1.5em;
+	/*font-size: 1.5em;*/
 	line-height: 20px;
 	font-family: 'Le Monde Courrier';
+	width: 500px;
 }
 
 .questionTitle{

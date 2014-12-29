@@ -6,13 +6,13 @@ article#question
       dl
         dt: label Title:
         / dd: view Ember.TextField value=fields.title
-        dd: = input valueBinding='fields.title'
+        dd: = input class='addQuestion' valueBinding='fields.title'
 
       dl
         dt: label Description:
         / dd: view Ember.TextField value=fields.description
         / dd: = input valueBinding='fields.description'
-        dd: = textarea class='form-control addAnswer' valueBinding="fields.description" placeholder="Add description (optional)"
+        dd: = textarea class='form-control addQuestion' valueBinding="fields.description" placeholder="Add description (optional)"
 
     fieldset.actions
       input type='submit' value='Ask Question' click="createQuestion"
