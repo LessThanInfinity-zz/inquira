@@ -1,7 +1,7 @@
 .displayAnswer
 	h4.userInfo John Smith
 	p.answerInfo
-	 | 4k Upvotes
+	 | {{num_upvotes}} Upvote(s)
 	p.textBody
 		answer.body
 	.row.actionBar
