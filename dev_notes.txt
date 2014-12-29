@@ -5,3 +5,14 @@ same with answer's user id. Change on server side to be current user.
 n+1 problem in loading upvotes/downvotes.
 
 edit question/answer is missing.
+
+--
+pre-users
+hide other when new question
+change mew question form
+update navbar to reflect better
+add developer's notes before questions.
+
+
+
+add tags?

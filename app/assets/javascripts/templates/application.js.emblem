@@ -9,5 +9,9 @@ nav.navbar.navbar-default
 
 .container-fluid
 	.col-md-10.col-md-offset-1
+		section.well
+			p
+				| Developer Notes: This site has been rolled back to a commit before users was introduced as the new code resulted in some breakage. It should be back to the master branch soon but for now, please enjoy creating question and answering them as the ever-famous John Smith.
+
 		section#main
 			= outlet
