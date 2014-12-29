@@ -1,5 +1,5 @@
 article#question
-  h1 New Question
+  h1 Add Question
 
   form
     fieldset
