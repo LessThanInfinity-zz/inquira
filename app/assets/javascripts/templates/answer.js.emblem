@@ -5,10 +5,10 @@
 	p.textBody
 		answer.body
 	.row.actionBar
-		.col-md-3.noPaddingLeft
+		.col-md-4.noPaddingLeft
 			.want-answers.text-center click="createUpvote" 
 				| Upvote | {{num_upvotes}}
-		.col-md-2.noPaddingLeft
+		.col-md-3.noPaddingLeft
 			.downvote.text-center click="createDownvote"
 				| Downvote ({{num_downvotes}})
 	hr

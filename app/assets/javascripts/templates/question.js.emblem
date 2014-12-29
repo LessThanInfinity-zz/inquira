@@ -10,10 +10,10 @@ article#question
 			=model.description
 
 		.row.actionBar
-			.col-md-3.noPaddingLeft
+			.col-md-4.noPaddingLeft
 				.want-answers.text-center click="createUpvote" 
 					| Want answers | {{num_upvotes}}
-			.col-md-2.noPaddingLeft
+			.col-md-3.noPaddingLeft
 				.downvote.text-center click="createDownvote"
 					| Downvote ({{num_downvotes}})
 		hr
