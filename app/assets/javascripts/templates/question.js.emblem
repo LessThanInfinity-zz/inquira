@@ -42,13 +42,14 @@ article#question
 					.saving Saving...
 
 		each answer in answers
-			.displayAnswer
-				h4.userInfo John Smith
-				p.answerInfo
-				 | 4k Upvotes
-				p.textBody
-					answer.body
-				hr
+			render "answer" answer
+			/ .displayAnswer
+			/ 	h4.userInfo John Smith
+			/ 	p.answerInfo
+			/ 	 | 4k Upvotes
+			/ 	p.textBody
+			/ 		answer.body
+			/ 	hr
 
 	.col-md-4
 		h4.sidePanelHeading Related Questions

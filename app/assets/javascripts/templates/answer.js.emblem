@@ -1,0 +1,14 @@
+.displayAnswer
+	h4.userInfo John Smith
+	p.answerInfo
+	 | 4k Upvotes
+	p.textBody
+		answer.body
+	.row.actionBar
+		.col-md-3.noPaddingLeft
+			.want-answers.text-center click="createUpvote" 
+				| Upvote | {{num_upvotes}}
+		.col-md-2.noPaddingLeft
+			.downvote.text-center click="createDownvote"
+				| Downvote ({{num_downvotes}})
+	hr
