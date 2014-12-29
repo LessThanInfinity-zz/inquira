@@ -53,6 +53,9 @@ Inquira.QuestionController = Ember.ObjectController.extend({
 			var that= this;
 
 			if (that.upvoted){
+				var upvote = that.get('question_upvotes').findBy('user_id', 1);
+				upvote.deleteRecord();
+				upvote.save()
 				return;
 			}
 

@@ -39,7 +39,11 @@ class QuestionUpvotesController < ApplicationController
 
   def destroy
     @question_upvote.destroy
-    respond_with(@question_upvote)
+    # respond_with(@question_upvote)
+    respond_with(@question_upvote) do |format|
+      format.html
+      format.json {render json: @question_upvote}
+    end
   end
 
   private

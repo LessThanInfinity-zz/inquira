@@ -1,7 +1,10 @@
 article#question
 
 	.col-md-2
-		h4.sidePanelHeading Question Topics
+		h4.sidePanelHeading Topics
+		p.text-muted
+			i
+				| Topics to be added
 
 	.col-md-6
 		h1.questionTitle
@@ -46,3 +49,6 @@ article#question
 
 	.col-md-4
 		h4.sidePanelHeading Related Questions
+		p.text-muted
+			i
+				|Questions to be based on current topics

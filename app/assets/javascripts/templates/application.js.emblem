@@ -10,7 +10,7 @@ nav.navbar.navbar-default
 		.col-md-3.pull-right.centered.text-center
 			.navbar-header.text-center.addQuestion
 				.navbar-text
-					link-to 'questions.new' | New Question
+					link-to 'questions.new' | Ask Question
 
 .container-fluid
 	.col-md-10.col-md-offset-1
