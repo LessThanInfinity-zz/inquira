@@ -1,6 +1,6 @@
 <h1>Welcome to Inquira.</h1>
 
-<p>This project is but a light clone of <a href='http://www.quora.com/' target="_blank">Quora</a>. This was done mostly for practic with <a href="http://emblemjs.com/" target="_blank"> Emblem.js</a>, a handlebars alternative syntax that I like immensely, although I have to admit that I am wary of syntaxes that compile to another syntax. </p>
+<p>This project is but a light clone of <a href='http://www.quora.com/' target="_blank">Quora</a>. This was done mostly for practice with <a href="http://emblemjs.com/" target="_blank"> Emblem.js</a>, a handlebars alternative syntax that I like immensely, although I have to admit that I am wary of syntaxes that compile to another syntax. </p>
 
 <p>Inquira was built using:</p>
 <ul>

@@ -53,7 +53,7 @@ Inquira.QuestionController = Ember.ObjectController.extend({
 			var that= this;
 
 			if (that.upvoted){
-				var upvote = that.get('question_upvotes').findBy('user_id', 1);
+				var upvote = that.get('question_downvotes').findBy('user_id', 1);
 				upvote.deleteRecord();
 				upvote.save()
 				return;
@@ -67,6 +67,7 @@ Inquira.QuestionController = Ember.ObjectController.extend({
 			// debugger
 			upvote.save().then(function(){
 				console.log('upvoted??');
+				that.set('upvoted', true);
 			})
 		},
 
