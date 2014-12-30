@@ -53,9 +53,6 @@ Inquira.QuestionController = Ember.ObjectController.extend({
 			var that= this;
 
 			if (that.upvoted){
-				var upvote = that.get('question_downvotes').findBy('user_id', 1);
-				upvote.deleteRecord();
-				upvote.save()
 				return;
 			}
 
@@ -64,10 +61,15 @@ Inquira.QuestionController = Ember.ObjectController.extend({
 					question_id: question_id
 			}));
 
-			// debugger
 			upvote.save().then(function(){
 				console.log('upvoted??');
 				that.set('upvoted', true);
+				var downvote = that.get('question_downvotes').findBy('user_id', 1);
+				if (downvote){
+					downvote.deleteRecord();
+					downvote.save();
+					that.set('downvoted', false);
+				}
 			})
 		},
 
@@ -85,9 +87,14 @@ Inquira.QuestionController = Ember.ObjectController.extend({
 					question_id: question_id
 			}));
 
-			// debugger
 			downvote.save().then(function(){
 				console.log('downvoted??');
+				that.set('downvoted', true);
+				var upvote = that.get('question_upvotes').findBy('user_id', 1);
+				if (upvote){
+					upvote.deleteRecord();
+					upvote.save();					
+				}
 			})
 		},
 
