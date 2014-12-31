@@ -42,7 +42,11 @@ Currently disabled features:
 <p>To add/fix:</p>
 <ul>
 	<li>Edit/Update</li>
-	<li>Fix N+1 query issue. (rolled back with users.)</li>
+</ul>
+
+<p>Fixes for issues:</p>
+<ul>
+	<li>N+1 query issue taken care of using Rails's includes. </li>
 </ul>
 
 
