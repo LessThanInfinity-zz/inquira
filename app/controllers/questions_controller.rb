@@ -75,7 +75,7 @@ class QuestionsController < ApplicationController
 
   private
     def set_question
-      @question = Question.find(params[:id]).includes(:answers, :question_upvotes, :question_downvotes)
+      @question = Question.find(params[:id])#.includes(:answers, :question_upvotes, :question_downvotes)
     end
 
     def question_params

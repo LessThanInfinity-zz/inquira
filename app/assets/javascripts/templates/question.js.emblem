@@ -19,6 +19,9 @@ article#question
 			.col-md-3.noPaddingLeft
 				.downvote.text-center click="createDownvote"
 					| Downvote ({{num_downvotes}})
+			.col-md-1.pull-right
+				a.delete href="#" click='delete'
+					| X
 		hr
 		p
 			=numAnswers

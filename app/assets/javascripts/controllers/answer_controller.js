@@ -96,8 +96,9 @@ Inquira.AnswerController = Ember.ObjectController.extend({
 		delete: function(){
 			console.log('delete record Fired.');
 			var that= this;
+			var question = that.get('question');
 			that.get('model').destroyRecord().then(function(){
-				that.transitionToRoute('answers');
+				that.transitionToRoute('question', question);
 			})
 		},
 
