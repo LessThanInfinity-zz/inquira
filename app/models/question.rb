@@ -1,5 +1,5 @@
 class Question < ActiveRecord::Base
-	has_many :answers
+	has_many :answers, -> {includes(:answer_upvotes, :answer_downvotes)}
 	# has_many :upvotes, :foreign_key => 'question_id', :class_name => 'QuestionUpvote'
 	# has_many :downvotes, :foreign_key => 'question_id', :class_name => 'QuestionDownvote'
 

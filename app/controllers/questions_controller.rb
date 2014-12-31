@@ -5,8 +5,8 @@ class QuestionsController < ApplicationController
 
   def index
     puts "in questions Controller index. "
-    @questions = Question.all
-    puts @questions
+    @questions = Question.all.includes(:answers, :question_upvotes, :question_downvotes)
+    # puts @questions
 
     respond_with(@questions) do |format|
       format.html
@@ -75,7 +75,7 @@ class QuestionsController < ApplicationController
 
   private
     def set_question
-      @question = Question.find(params[:id])
+      @question = Question.find(params[:id]).includes(:answers, :question_upvotes, :question_downvotes)
     end
 
     def question_params
