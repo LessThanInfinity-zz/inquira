@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :topics
+
   resources :answer_upvotes
 
   resources :answer_downvotes

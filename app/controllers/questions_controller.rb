@@ -26,8 +26,6 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    puts "Q new fired. "
-
     @question = Question.new
     # respond_with(@question)
     respond_with(@question) do |format|
@@ -40,8 +38,6 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    puts "Q create fired. "
-
     @question = Question.new(question_params)
     @question.asker_id = 1; # THIS must be updated to reflect current user.
 
