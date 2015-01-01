@@ -31,4 +31,16 @@ class Question < ActiveRecord::Base
 	  self.topics = new_or_found_topics
 	end
 
+	def related_questions
+		similar = [];
+
+		self.topics.each do |topic|
+			similar.concat(topic.questions)
+		end
+
+		# puts similar
+		similar.delete(self)
+		return similar
+	end
+
 end

@@ -10,6 +10,8 @@ Inquira.Question = DS.Model.extend({
 	answers: DS.hasMany('answer'),
 	question_upvotes: DS.hasMany('question_upvote'),
 	question_downvotes: DS.hasMany('question_downvote'),
+	topics: DS.hasMany('topic'),
+	related_questions: DS.hasMany('question'),
 
 	num_upvotes:function(){
 		// debugger

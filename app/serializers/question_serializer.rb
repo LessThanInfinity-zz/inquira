@@ -7,9 +7,11 @@ class QuestionSerializer < ActiveModel::Serializer
   						:asker_id,
   						:created_at,
   						:updated_at
-              :topic_list
+              # :topic_list
+              # :related_questions
 
   has_many :answers
+  has_many :topics
   has_many :question_upvotes
   has_many :question_downvotes
 end

@@ -5,6 +5,11 @@ article#question
 		p.text-muted
 			i
 				| Topics to be added
+		/ ul
+		each topic in topics
+			li style="list-style-type:none"
+				topic.title
+
 
 	.col-md-6
 		h1.questionTitle

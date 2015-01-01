@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
 
   def index
     puts "in questions Controller index. "
-    @questions = Question.all.includes(:answers, :question_upvotes, :question_downvotes)
+    @questions = Question.all.includes(:answers, :question_upvotes, :question_downvotes, :topics)
     # puts @questions
 
     respond_with(@questions) do |format|
