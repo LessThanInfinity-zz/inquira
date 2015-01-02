@@ -1,0 +1,6 @@
+article#topics
+	each topic in controller
+		link-to 'topic' topic
+			h4
+				topic.title
+outlet

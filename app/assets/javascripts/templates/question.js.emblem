@@ -9,7 +9,8 @@ article#question
 		/ ul
 		each topic in topics
 			li style="list-style-type:none"
-				topic.title
+				link-to 'topic' topic
+					topic.title
 
 
 	.col-md-6

@@ -1,0 +1,12 @@
+article#topic
+	br
+	h2
+		| Topic: {{model.title}}
+
+	each question in questions
+		h3
+			link-to "question" question
+				question.title
+		p
+			question.description
+		hr

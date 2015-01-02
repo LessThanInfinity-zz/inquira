@@ -4,7 +4,7 @@ class TopicsController < ApplicationController
   respond_to :html, :json
 
   def index
-    @topics = Topic.all
+    @topics = Topic.all.includes(:questions)
     # respond_with(@topics)
     respond_with(@topics) do |format|
       format.html

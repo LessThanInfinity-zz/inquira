@@ -40,8 +40,8 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     @question.asker_id = 1; # THIS must be updated to reflect current user.
-
-    @question.save  
+    puts "got here."
+    @question.save
     respond_with(@question) do |format|
       format.html
       format.json {render json: @question}

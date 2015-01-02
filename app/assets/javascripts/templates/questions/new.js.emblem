@@ -6,7 +6,7 @@ article#question
       dl
         dt: label Title:
         / dd: view Ember.TextField value=fields.title
-        dd: = input class='addQuestion' valueBinding='fields.title'
+        dd: = input class='form-control addQuestion' valueBinding='fields.title'
 
       dl
         dt: label Description:
