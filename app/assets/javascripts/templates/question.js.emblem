@@ -2,9 +2,10 @@ article#question
 
 	.col-md-2
 		h4.sidePanelHeading Topics
-		p.text-muted
-			i
-				| Topics to be added
+		unless topics
+			p.text-muted
+				i
+					| No topics assigned yet.
 		/ ul
 		each topic in topics
 			li style="list-style-type:none"
@@ -60,3 +61,7 @@ article#question
 		p.text-muted
 			i
 				|Questions to be based on current topics
+		each question in related_questions
+			li
+				link-to "question" question.id
+					question.title

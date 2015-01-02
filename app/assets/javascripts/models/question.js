@@ -11,7 +11,7 @@ Inquira.Question = DS.Model.extend({
 	question_upvotes: DS.hasMany('question_upvote'),
 	question_downvotes: DS.hasMany('question_downvote'),
 	topics: DS.hasMany('topic'),
-	related_questions: DS.hasMany('question'),
+	related_questions: DS.attr(),
 
 	num_upvotes:function(){
 		// debugger

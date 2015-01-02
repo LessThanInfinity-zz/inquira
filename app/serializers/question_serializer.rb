@@ -6,12 +6,13 @@ class QuestionSerializer < ActiveModel::Serializer
   						:description,
   						:asker_id,
   						:created_at,
-  						:updated_at
+  						:updated_at,
               # :topic_list
-              # :related_questions
+              :related_questions
 
   has_many :answers
   has_many :topics
   has_many :question_upvotes
   has_many :question_downvotes
+  # has_many :related_questions
 end

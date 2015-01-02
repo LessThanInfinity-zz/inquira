@@ -6,6 +6,6 @@ Inquira.QuestionView = Ember.View.extend({
   didInsertElement: function(){
   	// console.log('did didInsertElement fired.');
   	var that = this;
-  	debugger
+  	// debugger
   }
 });
