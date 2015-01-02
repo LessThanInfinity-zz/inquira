@@ -9,10 +9,9 @@ edit question/answer is missing.
 --
 pre-users
 -------------
-- add delete functionality
-- add tags
 - add editing of questions.
 - update navbar to reflect better
-
-
-= N+1 solved, but might be an issue isn set_question.
+- add topic creation
+- add topic addition to question
+	= need to be able to search topics
+		== Preload topics on application controller, then filter?

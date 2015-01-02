@@ -58,9 +58,10 @@ article#question
 
 	.col-md-4
 		h4.sidePanelHeading Related Questions
-		p.text-muted
-			i
-				|Questions to be based on current topics
+		unless related_questions
+			p.text-muted
+				i
+					| No related questions yet. Perhaps it should be tagged better?
 		each question in related_questions
 			li
 				link-to "question" question.id
