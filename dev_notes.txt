@@ -17,10 +17,20 @@ pre-users
 topics:
 ---------
 
-- create topic view:
+X - create topic view:
 	= list all questions with topic.
 - create topic controller to create and delete.
 - create ability to add tagging
 	= add tagging model?
 		== Need tagging controller in backend? Only create/ destroy?
 
+
+timeline:
+1. ability to create tagging. 
+	= choose from topic
+	= create new topic.
+
+2. ability to update/edit question.
+3. ability to update/edit comment.
+
+4. users reloaded.

@@ -1,17 +1,12 @@
 Rails.application.routes.draw do
 
   resources :topics
-
+  resources :taggings, only: [:create, :destroy]
   resources :answer_upvotes
-
   resources :answer_downvotes
-
   resources :question_downvotes
-
   resources :question_upvotes
-
   resources :answers
-
   resources :questions
 
   root to: 'home#index'

@@ -4,7 +4,7 @@ class Question < ActiveRecord::Base
 	has_many :question_upvotes, dependent: :destroy
 	has_many :question_downvotes, dependent: :destroy
 
-	has_many :taggings
+	has_many :taggings, dependent: :destroy
 	has_many :topics, through: :taggings
 
 	# def num_upvotes

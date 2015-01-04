@@ -1,6 +1,5 @@
 Inquira.QuestionController = Ember.ObjectController.extend({
-	// isShowingQuestion: false,
-	// isAskingQuestion: false,
+	needs: ['questions'],
 	answerFields: {},
 	upvoted: null,
 	downvoted: null,
@@ -62,7 +61,6 @@ Inquira.QuestionController = Ember.ObjectController.extend({
 			}));
 
 			upvote.save().then(function(){
-				console.log('upvoted??');
 				that.set('upvoted', true);
 				var downvote = that.get('question_downvotes').findBy('user_id', 1);
 				if (downvote){
@@ -74,21 +72,18 @@ Inquira.QuestionController = Ember.ObjectController.extend({
 		},
 
 		createDownvote: function(){
-			console.log("create downvote fired. ");
 			var that= this;
 
 			if (that.downvoted){
 				return;
 			}
 
-			console.log("create downvote fired. ");
 			question_id = that.get('id');
 			var downvote = that.get('question_downvotes').pushObject(that.store.createRecord('questionDownvote',{
 					question_id: question_id
 			}));
 
 			downvote.save().then(function(){
-				console.log('downvoted??');
 				that.set('downvoted', true);
 				var upvote = that.get('question_upvotes').findBy('user_id', 1);
 				if (upvote){
@@ -99,15 +94,36 @@ Inquira.QuestionController = Ember.ObjectController.extend({
 		},
 
 		saveChanges: function(){
-			console.log('save Changes fired.');
 			var that=this;
 			if (that.get('model.isDirty')){
 				this.get('model').save();
 			}
 		},
 
+		addTopic: function(){
+			var that = this;
+			var allTopics = that.get('controllers.questions').get('allTopics');
+			var testTopic = allTopics.content[0];
+
+			question_id = that.get('id');
+			topic_id = testTopic.get('id');
+
+			newTagging = that.store.createRecord('tagging', {
+				question_id: question_id,
+				topic_id: topic_id
+			});
+
+			newTagging.save();
+
+			// that.get('topics').pushObject(testTopic);
+			// that.get('model').save().then(function(){
+			// 	console.log('saved');
+			// });
+
+			// debugger
+		},
+
 		delete: function(){
-			console.log('delete record Fired.');
 			var that= this;
 			that.get('model').destroyRecord().then(function(){
 				that.transitionToRoute('questions');

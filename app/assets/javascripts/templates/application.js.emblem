@@ -1,13 +1,13 @@
 // app/assets/javascripts/templates/application.js.emblem
 nav.navbar.navbar-default
 	.container-fluid
-		.col-md-4.col-md-offset-1.centered
+		.col-xs-12.col-sm-4.col-sm-offset-1.col-md-4.col-md-offset-1.centered
 			.navbar-header.text-center.brand
 				link-to 'questions'
 					.navbar-text.brand href="#"
 						| Inquira
 
-		.col-md-3.pull-right.centered.text-center
+		.col-xs-12.col-sm-3.col-md-3.pull-right.centered.text-center
 			.navbar-header.text-center.addQuestion
 				.navbar-text
 					link-to 'questions.new' | Ask Question

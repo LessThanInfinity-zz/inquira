@@ -1,5 +1,4 @@
 article#topic
-	br
 	h2
 		| Topic: {{model.title}}
 

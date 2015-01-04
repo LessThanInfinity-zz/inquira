@@ -29,6 +29,9 @@ article#question
 			.col-md-1.pull-right
 				a.delete href="#" click='delete'
 					| X
+			.col-md-2.text-center
+				a.addTopic href="#" click='addTopic'
+					|AddTopic
 		hr
 		p
 			=numAnswers
