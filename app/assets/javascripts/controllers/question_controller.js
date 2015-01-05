@@ -4,6 +4,7 @@ Inquira.QuestionController = Ember.ObjectController.extend({
 	upvoted: null,
 	downvoted: null,
 	allTopics: null,
+	isEditing: false,
 
 	allTopicsObserver: function(){
 		var that = this;
@@ -97,10 +98,19 @@ Inquira.QuestionController = Ember.ObjectController.extend({
 			})
 		},
 
+		toggleEditing: function(){
+			var that= this;
+			that.set('isEditing', !that.get('isEditing'));
+		},
+
 		saveChanges: function(){
 			var that=this;
 			if (that.get('model.isDirty')){
-				this.get('model').save();
+				this.get('model').save().then(function(rec){
+					that.set('isEditing', false);
+				});
+			} else {
+				that.set('isEditing', false);
 			}
 		},
 

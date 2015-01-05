@@ -11,16 +11,37 @@ article#question
 			li.noBullets
 				link-to 'topic' topic
 					topic.title
+		a href="#" click="toggleEditing"
+			| Toggle Editing
+
 
 	.col-md-6
-		h1.questionTitle
-			=model.title
-		p.textBody
-			=model.description
+		if isEditing
+			form
+				fieldset
+					dl
+						dt: label Title:
+						dd: = textarea class='form-control editQuestion' valueBinding="model.title"
+
+					dl
+						dt: label Description:
+						dd: = textarea class='form-control editQuestion' valueBinding="model.description" placeholder="Add description (optional)"
+
+				fieldset.actions
+					input type='submit' value='Save Changes' click="saveChanges" class="btn btn-primary pull-right"
+		else
+			h1.questionTitle
+				=model.title
+				a href="#" click="toggleEditing"
+					i.glyphicon.glyphicon-trash
+			p.textBody
+				=model.description
+				a href="#" click="toggleEditing"
+					i class="glyphicon glyphicon-trash"
 
 		/ how to submit this data?
 		/ commented out for now.
-		
+
 		/ .row
 		/ 	select.tokenize#topic-select multiple='multiple'
 		/ 		each item in allTopics
