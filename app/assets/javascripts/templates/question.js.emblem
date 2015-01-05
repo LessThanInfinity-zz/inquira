@@ -8,7 +8,7 @@ article#question
 					| No topics assigned yet.
 		/ ul
 		each topic in topics
-			li style="list-style-type:none"
+			li.noBullets
 				link-to 'topic' topic
 					topic.title
 
@@ -19,14 +19,13 @@ article#question
 			=model.description
 
 		/ how to submit this data?
-		.row
-			select.tokenize#topic-select multiple='multiple'
-				each item in allTopics
-					option{bind-attr value="item.id"}
-						item.title
-				/ option value='1' Science
-				/ option value='2' Test
-				/ option value='3' Numbered
+		/ commented out for now.
+		
+		/ .row
+		/ 	select.tokenize#topic-select multiple='multiple'
+		/ 		each item in allTopics
+		/ 			option{bind-attr value="item.id"}
+		/ 				item.title
 
 		.row.actionBar
 			.col-md-4.noPaddingLeft
