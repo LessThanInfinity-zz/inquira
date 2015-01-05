@@ -76,6 +76,9 @@ gem 'paperclip'
 # Serialization. Should have been included with ember. 
 gem 'active_model_serializers'
 
+# Font Awesome
+# gem 'font-awesome-less'
+
 # ember-devise-simple-auth
 # gem "ember_devise_simple_auth"
 

@@ -13,6 +13,14 @@ body{
 	list-style-type: none;
 }
 
+.hoverRed:hover{
+	color: red;
+}
+
+.smallText{
+	font-size: 15px;
+}
+
 .noPaddingLeft{
 	padding-left: 0px;
 }
@@ -87,6 +95,10 @@ body{
 .addAnswer{
 	width: 100%;
 	/*height: 20px;*/
+}
+
+.editIcon{
+	margin-top: 2px;
 }
 
 .textBody{

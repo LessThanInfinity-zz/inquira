@@ -13,6 +13,9 @@ article#question
 					topic.title
 		a href="#" click="toggleEditing"
 			| Toggle Editing
+		hr
+		a.addTopic href="#" click='addTopic'
+			| AddTopic
 
 
 	.col-md-6
@@ -32,12 +35,13 @@ article#question
 		else
 			h1.questionTitle
 				=model.title
-				a href="#" click="toggleEditing"
-					i.glyphicon.glyphicon-trash
+				span.smallText
+					a href="#" click="toggleEditing"
+						/ i.glyphicon.glyphicon-cloud
+						i.fa.fa-pencil.editIcon
 			p.textBody
 				=model.description
 				a href="#" click="toggleEditing"
-					i class="glyphicon glyphicon-trash"
 
 		/ how to submit this data?
 		/ commented out for now.
@@ -57,10 +61,8 @@ article#question
 					| Downvote ({{num_downvotes}})
 			.col-md-1.pull-right
 				a.delete href="#" click='delete'
-					| X
-			.col-md-2.text-center
-				a.addTopic href="#" click='addTopic'
-					|AddTopic
+					i class="fa fa-trash hoverRed"
+
 		hr
 		p
 			=numAnswers
