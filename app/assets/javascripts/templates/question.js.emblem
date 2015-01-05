@@ -15,7 +15,10 @@ article#question
 			| Toggle Editing
 		hr
 		a.addTopic href="#" click='addTopic'
-			| AddTopic
+			| AddTopic 
+			p.text-muted
+				i
+					|(currently only adds 'science')
 
 
 	.col-md-6
