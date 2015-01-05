@@ -32,10 +32,6 @@ Inquira.QuestionController = Ember.ObjectController.extend({
 		}
 	}.observes('question_downvotes'),
 
-	numAnswers: function(){
-		return this.get('answers').length;
-	}.property('answers'),	
-
 	actions: {
 		createAnswer: function(){
 			var that = this;
@@ -113,7 +109,13 @@ Inquira.QuestionController = Ember.ObjectController.extend({
 				topic_id: topic_id
 			});
 
-			newTagging.save();
+			newTagging.save().then(function(rec){
+				// debugger
+				console.log('save success.');
+				that.get('topics').pushObject(testTopic);
+				// that.get('model').refresh();
+				that.store.fetch('question',question_id);
+			});
 
 			// that.get('topics').pushObject(testTopic);
 			// that.get('model').save().then(function(){
