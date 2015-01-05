@@ -22,7 +22,7 @@ article#question
 		.row
 			select.tokenize#topic-select multiple='multiple'
 				each item in allTopics
-					option value='1' 
+					option{bind-attr value="item.id"}
 						item.title
 				/ option value='1' Science
 				/ option value='2' Test
