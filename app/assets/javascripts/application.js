@@ -18,6 +18,7 @@
 //= require ember-data
 //= require bootstrap
 //= require underscore
+//= require jquery.tokenize
 //= require_self
 //= require ./app
 

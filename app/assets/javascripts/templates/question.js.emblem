@@ -12,12 +12,21 @@ article#question
 				link-to 'topic' topic
 					topic.title
 
-
 	.col-md-6
 		h1.questionTitle
 			=model.title
 		p.textBody
 			=model.description
+
+		/ how to submit this data?
+		.row
+			select.tokenize#topic-select multiple='multiple'
+				each item in allTopics
+					option value='1' 
+						item.title
+				/ option value='1' Science
+				/ option value='2' Test
+				/ option value='3' Numbered
 
 		.row.actionBar
 			.col-md-4.noPaddingLeft

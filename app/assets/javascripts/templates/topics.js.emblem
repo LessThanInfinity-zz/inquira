@@ -1,6 +1,10 @@
 article#topics
-	each topic in controller
-		link-to 'topic' topic
-			h4
-				topic.title
-outlet
+	.col-md-2
+		h4.sidePanelHeading Topics
+		each topic in controller
+			li.noBullets
+				link-to 'topic' topic
+					topic.title
+
+	.col-md-10
+		outlet

@@ -3,6 +3,14 @@ Inquira.QuestionController = Ember.ObjectController.extend({
 	answerFields: {},
 	upvoted: null,
 	downvoted: null,
+	allTopics: null,
+
+	allTopicsObserver: function(){
+		var that = this;
+		console.log('allTopicsObserver fired?');
+		var allTopics = that.get('controllers.questions').get('allTopics');
+		that.set('allTopics', allTopics);
+	}.observes('controllers.questions.allTopics'),
 
 	upvoteObserver: function(){
 		var that = this;
@@ -113,16 +121,8 @@ Inquira.QuestionController = Ember.ObjectController.extend({
 				// debugger
 				console.log('save success.');
 				that.get('topics').pushObject(testTopic);
-				// that.get('model').refresh();
 				that.store.fetch('question',question_id);
 			});
-
-			// that.get('topics').pushObject(testTopic);
-			// that.get('model').save().then(function(){
-			// 	console.log('saved');
-			// });
-
-			// debugger
 		},
 
 		delete: function(){

@@ -9,7 +9,6 @@ pre-users
 -------------
 - add editing of questions.
 - update navbar to reflect better
-- add topic creation
 - add topic addition to question
 	= need to be able to search topics
 		== Preload topics on application controller, then filter?
