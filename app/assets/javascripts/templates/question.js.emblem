@@ -11,8 +11,8 @@ article#question
 			li.noBullets
 				link-to 'topic' topic
 					topic.title
-		a href="#" click="toggleEditing"
-			| Toggle Editing
+		/ a href="#" click="toggleEditing"
+		/ 	| Toggle Editing
 		hr
 		a.addTopic href="#" click='addTopic'
 			| AddTopic 
@@ -41,7 +41,7 @@ article#question
 				span.smallText
 					a href="#" click="toggleEditing"
 						/ i.glyphicon.glyphicon-cloud
-						i.fa.fa-pencil.editIcon
+						i.fa.fa-pencil.editIcon.hoverYellow
 			p.textBody
 				=model.description
 				a href="#" click="toggleEditing"

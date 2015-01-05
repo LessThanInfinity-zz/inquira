@@ -2,6 +2,7 @@ Inquira.AnswerController = Ember.ObjectController.extend({
 	answerFields: {},
 	upvoted: null,
 	downvoted: null,
+	isEditing: false,
 
 	upvoteObserver: function(){
 		var that = this;
@@ -89,8 +90,17 @@ Inquira.AnswerController = Ember.ObjectController.extend({
 			console.log('save Changes fired.');
 			var that=this;
 			if (that.get('model.isDirty')){
-				this.get('model').save();
+				this.get('model').save().then(function(rec){
+					that.set('isEditing', false);
+				});
+			} else {
+				that.set('isEditing', false);
 			}
+		},
+
+		toggleEditing: function(){
+			var that= this;
+			that.set('isEditing', !that.get('isEditing'));
 		},
 
 		delete: function(){

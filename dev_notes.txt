@@ -7,17 +7,11 @@ edit question/answer is missing.
 --
 pre-users
 -------------
-- add editing of questions.
 - update navbar to reflect better
-- add topic addition to question
-	= need to be able to search topics
-		== Preload topics on application controller, then filter?
 
 topics:
 ---------
 
-X - create topic view:
-	= list all questions with topic.
 - create topic controller to create and delete.
 - create ability to add tagging
 	= add tagging model?
@@ -29,7 +23,6 @@ timeline:
 	= choose from topic
 	= create new topic.
 
-2. ability to update/edit question.
 3. ability to update/edit comment.
 
 4. users reloaded.

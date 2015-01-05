@@ -2,8 +2,17 @@
 	h4.userInfo John Smith
 	p.answerInfo
 	 | {{num_upvotes}} Upvote(s)
-	p.textBody
-		answer.body
+
+	if isEditing
+		form
+			fieldset
+				dl
+					dd: = textarea class='form-control editAnswer' valueBinding="model.body"
+			fieldset.actions
+				input type='submit' value="Save Answer" click="saveChanges" class="btn btn-primary pull-right"
+	else
+		p.textBody
+			answer.body
 	.row.actionBar
 		.col-md-4.noPaddingLeft
 			.want-answers.text-center click="createUpvote" 
@@ -11,7 +20,12 @@
 		.col-md-3.noPaddingLeft
 			.downvote.text-center click="createDownvote"
 				| Downvote ({{num_downvotes}})
-		.col-md-1.pull-right
-				a.delete href="#" click='delete'
-					| X
+		.col-md-2.pull-right
+			a.edit href="#" click='toggleEditing'
+				i.fa.fa-pencil.hoverYellow
+			|     
+			a.delete href="#" click='delete'
+				i.fa.fa-trash.hoverRed
+			
+
 	hr
